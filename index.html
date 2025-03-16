@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain E-Commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="blockchain-bg" id="blockchain-animation"></div>
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+    </div>
+    
+    <div class="cyber-header">
+        <div class="glitch-wrapper">
+            <div class="glitch" data-text="PARGAT SINGH">PARGAT SINGH</div>
+        </div>
+        <div class="cyber-subtitle">BLOCKCHAIN DEVELOPER</div>
+        
+        <div class="contact-links-top">
+            <a href="https://linkedin.com/in/your-linkedin" target="_blank" class="contact-btn linkedin">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/your-github" target="_blank" class="contact-btn github">
+                <i class="fab fa-github"></i>
+            </a>
+            <a href="mailto:your-email@example.com" class="contact-btn email">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="header-title">
+                <div class="neon-title">
+                    <span class="neon-text"><i class="fa-solid fa-cubes"></i> Decentralized E-Commerce</span>
+                </div>
+            </div>
+            <div class="defi-tag">
+                <span class="badge cyber-badge">DeFi Marketplace</span>
+                <span class="badge network cyber-badge">Ethereum</span>
+            </div>
+        </header>
+        
+        <div class="wallet-section">
+            <button id="connect-btn" onclick="connectWallet()" class="cyber-btn">
+                <i class="fa-solid fa-wallet"></i> Connect Wallet
+            </button>
+            <div id="wallet-address">Not Connected</div>
+        </div>
+        
+        <div class="defi-stats">
+            <div class="stat-card cyber-card">
+                <div class="stat-icon"><i class="fa-solid fa-cube"></i></div>
+                <div class="stat-value" id="product-count">0</div>
+                <div class="stat-label">Products</div>
+            </div>
+            <div class="stat-card cyber-card">
+                <div class="stat-icon"><i class="fa-solid fa-chart-line"></i></div>
+                <div class="stat-value" id="trade-volume">0 ETH</div>
+                <div class="stat-label">Volume</div>
+            </div>
+            <div class="stat-card cyber-card">
+                <div class="stat-icon"><i class="fa-solid fa-user-group"></i></div>
+                <div class="stat-value" id="unique-sellers">0</div>
+                <div class="stat-label">Sellers</div>
+            </div>
+        </div>
+        
+        <div class="card cyber-card">
+            <h2><i class="fa-solid fa-circle-plus"></i> Add New Product</h2>
+            <div class="form-group">
+                <input type="text" id="product-name" placeholder="Product Name" class="cyber-input">
+            </div>
+            <div class="form-group">
+                <input type="number" id="product-price" placeholder="Price in Wei" class="cyber-input">
+            </div>
+            <button onclick="addProduct()" class="cyber-btn">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i> Add Product to Blockchain
+            </button>
+        </div>
+        
+        <div class="card cyber-card">
+            <h2><i class="fa-solid fa-store"></i> Products for Sale</h2>
+            <div class="filter-tabs">
+                <button class="tab-btn cyber-tab active" onclick="filterProducts('all')">All</button>
+                <button class="tab-btn cyber-tab" onclick="filterProducts('available')">Available</button>
+                <button class="tab-btn cyber-tab" onclick="filterProducts('sold')">Sold</button>
+            </div>
+            <div id="loading-products" class="loading-container" style="display: none;">
+                <span class="loading"></span> Loading products from blockchain...
+            </div>
+            <div id="products" class="products-grid">
+                <!-- Products will be loaded here dynamically -->
+            </div>
+            <div id="no-products" style="display: none; text-align: center; padding: 30px; color: rgba(255,255,255,0.5);">
+                <i class="fa-solid fa-circle-info fa-2x"></i>
+                <p>No products available on the blockchain yet.</p>
+            </div>
+        </div>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="project-info">
+                    <p>Decentralized E-Commerce Platform powered by Ethereum Blockchain</p>
+                    <p><i class="fa-solid fa-code"></i> Smart Contract Address: <span id="contract-address">Not connected</span></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="blockchain-badge">
+                    <i class="fa-brands fa-ethereum"></i> Ethereum Smart Contract
+                </div>
+                <div class="copyright">© 2023 PARGAT SINGH</div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.8.2/dist/web3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
